@@ -60,7 +60,7 @@ bind -x '"\C-f":"tmux-sessionizer"'
 bind-key -r f run-shell "tmux neww ~/.local/scripts/tmux-sessionizer"
 ```
 
-This will open fuzzy finder then you can search for the project you want and start new tmux session on that project directory on pressing <prefix>f
+This will open fuzzy finder then you can search for the project you want and start new tmux session on that project directory on pressing \<prefix\> + f
 
 ### Give permission for tmux-sessionizer script to run and restart shell
 
