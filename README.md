@@ -48,7 +48,7 @@ Here change the find paths on line no. 6 to your corresponding paths to projects
 PATH="$PATH":"$HOME/.local/scripts/"
 ```
 
-### Add the macro `Ctrl + f` to your .bash_profile
+### Add the macro `Ctrl + f` to your .bash_profile or .bashrc
 
 ```bash
 bind -x '"\C-f":"tmux-sessionizer"'
