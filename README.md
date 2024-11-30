@@ -40,6 +40,8 @@ This repository contains useful utility scripts for Linux systems.
         * [Notes](#notes-2)
         * [Troubleshooting](#troubleshooting-2)
         * [Safety Features](#safety-features-1)
+    * [Script Organization in Unix Systems](#script-organization-in-unix-systems)
+        * [Recommended Structure](#recommended-structure)
 * [Contributing](#contributing)
 * [License](#license)
 * [Disclaimer](#disclaimer)
@@ -500,6 +502,37 @@ df -h /
 - Root privilege verification
 - Error handling for update and upgrade processes
 - Status feedback after each operation
+
+---
+
+### Script Organization in Unix Systems
+
+For optimal script organization in Unix systems, consider these standard locations:
+
+- `~/.local/bin/` - Personal scripts for your user
+- `/usr/local/bin/` - System-wide custom scripts (requires root)
+- `~/.config/` - Configuration files and small helper scripts
+- `~/.local/scripts/` - Alternative location for personal scripts collection
+
+To make scripts accessible from anywhere:
+
+1. Place them in `~/.local/bin/`
+2. Ensure this path is in your `PATH` variable by adding to your `~/.bashrc`:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+#### Recommended Structure
+
+```
+$HOME/
+├── .local/
+│   ├── bin/        # Regularly used scripts
+│   └── scripts/    # Less frequently used scripts
+└── .config/
+    └── scripts/    # Configuration scripts
+```
 
 ---
 
