@@ -87,7 +87,7 @@ sudo apt install yt-dlp
 1. Download the script:
 
 ```bash
-wget https://github.com/merkksgit/scripts/yt-dlp-download.sh
+wget https://raw.githubusercontent.com/merkksgit/scripts/main/yt-dlp-download.sh
 ```
 
 2. Make it executable:
@@ -127,7 +127,7 @@ A script to safely update Oh My Posh to the latest version with error handling a
 1. Download the script:
 
 ```bash
-wget https://github.com/merkksgit/scripts/ohmyposhupdate.sh
+wget https://raw.githubusercontent.com/merkksgit/scripts/main/ohmyposhupdate.sh
 ```
 
 2. Make it executable:
@@ -167,67 +167,40 @@ sudo apt install tmux fzf
 
 #### Installation
 
-1. Create the scripts directory and save the script:
+1. Create the scripts directory and download the script:
 
 ```bash
 mkdir -p ~/.local/scripts/
-touch ~/.local/scripts/tmux-sessionizer
+cd ~/.local/scripts
+wget https://raw.githubusercontent.com/merkksgit/scripts/main/tmux-sessionizer
 chmod +x ~/.local/scripts/tmux-sessionizer
 ```
 
-2. Add the script content:
-
-```bash
-#!/usr/bin/env bash
-if [[ $# -eq 1 ]]; then
-    selected=$1
-else
-    selected=$(find ~/projects ~/tests -mindepth 1 -maxdepth 1 -type d | fzf)
-fi
-if [[ -z $selected ]]; then
-    exit 0
-fi
-selected_name=$(basename "$selected" | tr . _)
-tmux_running=$(pgrep tmux)
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-    exit 0
-fi
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
-fi
-if [[ -z $TMUX ]]; then
-    tmux attach -t $selected_name
-else
-    tmux switch-client -t $selected_name
-fi
-```
-
-3. Configure your project paths:
+2. Configure your project paths:
 
    - Open the script and modify line 6:
    - Replace `~/projects ~/tests` with your project directories
    - Example: `selected=$(find ~/work ~/personal-projects ~/github -mindepth 1 -maxdepth 1 -type d | fzf)`
 
-4. Add the script to your PATH by adding this line to `~/.bashrc`:
+3. Add the script to your PATH by adding this line to `~/.bashrc`:
 
 ```bash
 PATH="$PATH:$HOME/.local/scripts"
 ```
 
-5. Set up keyboard shortcut by adding to `~/.bashrc` or `~/.bash_profile`:
+4. Set up keyboard shortcut by adding to `~/.bashrc` or `~/.bash_profile`:
 
 ```bash
 bind -x '"\C-f":"tmux-sessionizer"'
 ```
 
-6. Configure tmux by adding to `~/.tmux.conf`:
+5. Configure tmux by adding to `~/.tmux.conf`:
 
 ```
 bind-key -r f run-shell "tmux neww ~/.local/scripts/tmux-sessionizer"
 ```
 
-7. Apply changes:
+6. Apply changes:
 
 ```bash
 source ~/.bashrc
@@ -337,7 +310,7 @@ Replace:
 3. Download the management script:
 
 ```bash
-wget https://github.com/merkksgit/scripts/battery-charge-threshold.sh
+wget https://raw.githubusercontent.com/merkksgit/scripts/main/battery-charge-threshold.sh
 ```
 
 4. Make it executable:
@@ -455,7 +428,7 @@ A straightforward script for handling system updates on Debian/Ubuntu-based syst
 1. Download the script:
 
 ```bash
-wget https://github.com/merkksgit/scripts/update-apt.sh
+wget https://raw.githubusercontent.com/merkksgit/scripts/main/update-apt.sh
 ```
 
 2. Make it executable:
