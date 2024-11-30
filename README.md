@@ -40,15 +40,6 @@ This repository contains useful utility scripts for Linux systems.
         * [Notes](#notes-2)
         * [Troubleshooting](#troubleshooting-2)
         * [Safety Features](#safety-features-1)
-    * [Simple System Update Script](#simple-system-update-script)
-        * [Features](#features-5)
-        * [Prerequisites](#prerequisites-5)
-        * [Installation](#installation-5)
-        * [What the Script Does](#what-the-script-does-1)
-        * [Output Example](#output-example-1)
-        * [Notes](#notes-3)
-        * [Troubleshooting](#troubleshooting-3)
-        * [Safety Features](#safety-features-2)
 * [Contributing](#contributing)
 * [License](#license)
 * [Disclaimer](#disclaimer)
@@ -510,109 +501,7 @@ df -h /
 - Error handling for update and upgrade processes
 - Status feedback after each operation
 
-### Simple System Update Script
-
-A straightforward script for handling system updates on Debian/Ubuntu-based systems with basic error handling and disk space verification.
-
-#### Features
-
-- Automated system update and upgrade
-- Error handling and privilege checks
-- Disk space verification
-- Clear status messages
-- Non-interactive upgrade mode (-y flag)
-
-#### Prerequisites
-
-- Debian/Ubuntu-based Linux system
-- Sudo privileges
-
-#### Installation
-
-1. Download the script:
-
-```bash
-wget https://github.com/merkksgit/scripts/update-apt.sh
-```
-
-2. Make it executable:
-
-```bash
-chmod +x update-apt.sh
-```
-
-3. Run the script with sudo:
-
-```bash
-sudo ./update-apt.sh
-```
-
-#### What the Script Does
-
-1. **System Update**
-
-   - Updates package lists (`apt update`)
-   - Upgrades installed packages (`apt upgrade -y`)
-
-2. **System Status**
-
-   - Displays available disk space after update
-   - Shows update completion status
-
-3. **Safety Features**
-   - Checks for root privileges
-   - Handles errors during update process
-   - Verifies successful completion
-
-#### Output Example
-
-```
-Updating package lists...
-Package lists updated successfully
-
-Upgrading packages...
-System update completed successfully!
-
-System status:
-Available disk space:
-Filesystem      Size  Used  Avail  Use%  Mounted on
-/dev/sda1       100G   50G    50G   50%  /
-```
-
-#### Notes
-
-- Non-interactive mode is enabled by default (-y flag)
-- Script requires sudo privileges
-- Basic error handling is implemented
-- Disk space check included for verification
-
-#### Troubleshooting
-
-If you encounter issues:
-
-1. Verify sudo privileges:
-
-```bash
-sudo whoami
-```
-
-2. Check internet connectivity:
-
-```bash
-ping -c 4 google.com
-```
-
-3. Verify sufficient disk space:
-
-```bash
-df -h /
-```
-
-#### Safety Features
-
-- Root privilege verification
-- Error handling for update and upgrade processes
-- Status feedback after each operation
+---
 
 ## Contributing
 
