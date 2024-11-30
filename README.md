@@ -41,6 +41,7 @@ This repository contains useful utility scripts for Linux systems.
         * [Troubleshooting](#troubleshooting-2)
         * [Safety Features](#safety-features-1)
     * [Script Organization in Unix Systems](#script-organization-in-unix-systems)
+        * [Note About Scripts Requiring Sudo](#note-about-scripts-requiring-sudo)
         * [Recommended Structure](#recommended-structure)
 * [Contributing](#contributing)
 * [License](#license)
@@ -522,6 +523,10 @@ To make scripts accessible from anywhere:
 ```bash
 export PATH="$HOME/.local/bin:$PATH"
 ```
+
+#### Note About Scripts Requiring Sudo
+
+Scripts that require sudo privileges might not run directly from ~/.local/bin because sudo uses a restricted PATH for security. It's recommended to place them directly in /usr/local/bin.
 
 #### Recommended Structure
 
