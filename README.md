@@ -509,7 +509,7 @@ Feel free to submit issues and enhancement requests!
 
 ## License
 
-[MIT License](LICENSE)
+[MIT License](https://mit-license.org/)
 
 ## Disclaimer
 
