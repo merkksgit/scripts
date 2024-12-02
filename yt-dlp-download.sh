@@ -10,7 +10,8 @@ fi
 # Function to print menu
 print_menu() {
     clear
-    echo "=== YouTube Downloader ==="
+    echo
+    echo "===== YouTube Downloader ====="
     echo
     echo "1. Download video (best quality)"
     echo "2. Download audio only (MP3)"
