@@ -34,8 +34,7 @@ fi
 
 # Store the current version
 echo "Checking current version of Oh My Posh..."
-current_version=$(oh-my-posh --version)
-if [ $? -ne 0 ]; then
+if ! current_version=$(oh-my-posh --version); then
     echo "Error: Failed to get current version"
     exit 1
 fi
@@ -75,7 +74,11 @@ fi
 rm -rf "$temp_dir"
 
 # Get new version
-new_version=$(oh-my-posh --version)
+if ! new_version=$(oh-my-posh --version); then
+    echo "Error: Failed to get new version"
+    exit 1
+fi
+
 echo -e "\nUpdate completed successfully!"
 echo "Previous version: $current_version"
 echo "New version: $new_version"

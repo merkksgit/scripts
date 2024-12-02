@@ -7,7 +7,7 @@ create_web_project() {
     # Check if directory already exists
     if [ -d "$project_name" ]; then
         echo "Warning: Directory '$project_name' already exists!"
-        read -p "Do you want to overwrite it? (y/n): " answer
+        read -r -p "Do you want to overwrite it? (y/n): " answer
         
         case $answer in
             [Yy]* )
