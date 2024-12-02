@@ -13,7 +13,7 @@ This repository contains useful utility scripts for Linux systems.
         * [Features](#features-1)
         * [Prerequisites](#prerequisites-1)
         * [Installation](#installation-1)
-    * [3. Tmux-Sessionizer](#3-tmux-sessionizer)
+    * [3. Tmux-Sessionizer, credit: ThePrimeagen](#3-tmux-sessionizer-credit-theprimeagen)
         * [Features](#features-2)
         * [Prerequisites](#prerequisites-2)
         * [Installation](#installation-2)
@@ -138,7 +138,7 @@ sudo ./ohmyposhupdate.sh
 
 ---
 
-### 3. Tmux-Sessionizer
+### 3. Tmux-Sessionizer, credit: [ThePrimeagen](https://github.com/ThePrimeagen/)
 
 A powerful tmux workflow enhancement script that allows quick navigation between project directories and manages tmux sessions efficiently.
 
