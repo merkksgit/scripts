@@ -27,7 +27,7 @@ print_menu() {
 # Function to get video URL
 get_url() {
     echo
-    read -p "Enter YouTube URL: " url
+    read -r -p "Enter YouTube URL: " url
     if [ -z "$url" ]; then
         echo "Error: URL cannot be empty"
         exit 1
@@ -44,7 +44,7 @@ get_output_dir() {
     echo "3. Music (~/Music)"
     echo "4. Custom path"
     echo
-    read -p "Enter your choice (1-4): " dir_choice
+    read -r -p "Enter your choice (1-4): " dir_choice
     echo
     
     case $dir_choice in
@@ -58,7 +58,7 @@ get_output_dir() {
             output_dir="$HOME/Music"
             ;;
         4)
-            read -p "Enter custom download path: " custom_path
+            read -r -p "Enter custom download path: " custom_path
             # Expand ~ if used in the custom path
             output_dir="${custom_path/#\~/$HOME}"
             ;;
@@ -84,12 +84,12 @@ print_completion() {
     echo "Files have been saved to: $output_dir"
     echo "=============================="
     echo
-    read -p "Press Enter to continue..."
+    read -r -p "Press Enter to continue..."
 }
 
 while true; do
     print_menu
-    read -p "Enter your choice (1-8): " choice
+    read -r -p "Enter your choice (1-8): " choice
     
     case $choice in
         1)  # Best quality video
@@ -174,7 +174,7 @@ while true; do
             echo "Updating yt-dlp..."
             sudo yt-dlp -U
             echo
-            read -p "Press Enter to continue..."
+            read -r -p "Press Enter to continue..."
             ;;
             
         8)  # Exit
@@ -187,7 +187,7 @@ while true; do
             echo
             echo "Invalid option"
             echo
-            read -p "Press Enter to continue..."
+            read -r -p "Press Enter to continue..."
             ;;
     esac
 done
