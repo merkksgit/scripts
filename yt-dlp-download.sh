@@ -179,7 +179,11 @@ while true; do
             
         8)  # Exit
             echo
-            echo "Goodbye!"
+            if command -v cowsay &> /dev/null; then
+              cowsay "Goodbye!"
+            else
+              echo "Goodbye!"
+            fi
             exit 0
             ;;
             
