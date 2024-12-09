@@ -76,12 +76,6 @@ A feature-rich script for downloading videos and audio from YouTube using yt-dlp
 sudo apt install yt-dlp
 ```
 
-If you want a "cowsay" goodbye message:
-
-```bash
-sudo apt install cowsay
-```
-
 #### Installation
 
 1. Download the script:

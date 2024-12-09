@@ -176,14 +176,10 @@ while true; do
             echo
             read -r -p "Press Enter to continue..."
             ;;
-            
+
         8)  # Exit
             echo
-            if command -v cowsay &> /dev/null; then
-              cowsay "Goodbye!"
-            else
-              echo "Goodbye!"
-            fi
+            echo "Goodbye!"
             exit 0
             ;;
             
